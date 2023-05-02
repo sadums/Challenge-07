@@ -21,22 +21,22 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Enter a description for your README.',
+        message: 'Enter a description.',
         name: 'Description'
     },
     {
         type: 'input',
-        message: 'Enter installation instructions for your README.',
+        message: 'Enter installation instructions.',
         name: 'Installation'
     },
     {
         type: 'input',
-        message: 'Enter usage information for your README.',
+        message: 'Enter usage information.',
         name: 'Usage'
     },
     {
         type: 'input',
-        message: 'Enter credits for your README.',
+        message: 'Enter credits.',
         name: 'Credits'
     },
     {
@@ -61,13 +61,23 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Enter contribution guidelines for your README.',
+        message: 'Enter contribution guidelines.',
         name: 'Contributing'
     },
     {
         type: 'input',
-        message: 'Enter test instructions for your README.',
+        message: 'Enter test instructions.',
         name: 'Tests'
+    },
+    {
+        type: 'input',
+        message: 'Enter your email.',
+        name: 'email'
+    },
+    {
+        type: 'input',
+        message: 'Enter your Github username.',
+        name: 'github'
     }
 ];
 
