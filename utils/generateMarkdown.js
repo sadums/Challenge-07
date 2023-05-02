@@ -1,4 +1,4 @@
-const badges = {
+const licenseBadges = {
   "The Unlicense": "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)",
   "Mozilla Public License 2.0": "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)",
   "MIT License": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
@@ -15,13 +15,16 @@ const badges = {
 }
 
 function renderLicenseSection(license) {
-  return `${badges[license]}\n\nThis project uses ${license} for licensing`;
+  return `${licenseBadges[license]}\n\nThis project uses ${license} for licensing`;
 }
 
 function generateMarkdown(data) {
+  // function variables
   let includedData = new Map();
   let tableOfContents = '';
   let readMeString = '';
+
+  // Remove unused sections
   for(let key in data){
     if(data[key] != '' && key === 'License'){
       includedData.set(key, renderLicenseSection(data[key]));
@@ -34,7 +37,7 @@ function generateMarkdown(data) {
     }
   }
 
-  // Add extra data to 
+  // Add data to README string
   readMeString += `# ${data.title}\n\n`;
   if(data.tableOfContents === 'Yes') readMeString += `## Table of Contents\n\n${tableOfContents}\n`;
   includedData.forEach((v, k) => {
