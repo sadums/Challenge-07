@@ -27,8 +27,10 @@ function generateMarkdown(data) {
   // Remove unused sections
   for(let key in data){
     if(data[key] != '' && key === 'License'){
-      includedData.set(key, renderLicenseSection(data[key]));
-      tableOfContents += `- [${key}](#${key})\n`;
+      if(data[key] != 'None'){
+        includedData.set(key, renderLicenseSection(data[key]));
+        tableOfContents += `- [${key}](#${key})\n`;
+      }
       continue;
     }
     if(data[key] != '' && key != 'tableOfContents' && key != 'title' && key != 'email' && key != 'github'){

@@ -44,6 +44,7 @@ const questions = [
         message: 'Choose a license for your README.',
         name: 'License',
         choices: [
+            "None",
             "The Unlicense",
             "Mozilla Public License 2.0",
             "MIT License",
